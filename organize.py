@@ -11,7 +11,7 @@ files = os.listdir(cwd)
 
 def organizeProgramming():
 	for file in files:
-		if file != "org.py":
+		if file != "organize.py":
 			if file.endswith(".py") or file.endswith(".cpp") or file.endswith(".java") or file.endswith(".html") or file.endswith(".css") or file.endswith(".php") or file.endswith("bat") or file.endswith(".js") or file.endswith(".ajax"):
 				if "Programming" not in files :
 					os.mkdir("Programming")
