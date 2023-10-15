@@ -77,4 +77,4 @@ threadDocument.start()
 threadImage.start()
 threadProgramming.start()
 
-input()
+input("\npress any key to exit....")
