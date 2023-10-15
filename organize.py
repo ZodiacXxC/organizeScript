@@ -9,17 +9,17 @@ cwd = os.getcwd()
 
 files = os.listdir(cwd)
 
-def organizePython():
+def organizeProgramming():
 	for file in files:
 		if file != "org.py":
-			if file.endswith(".py"):
-				if "python" not in files :
-					os.mkdir("python")
+			if file.endswith(".py") or file.endswith(".cpp") or file.endswith(".java") or file.endswith(".html") or file.endswith(".css") or file.endswith(".php") or file.endswith("bat") or file.endswith(".js") or file.endswith(".ajax"):
+				if "Programming" not in files :
+					os.mkdir("Programming")
 				pathFile = cwd + "\\" + file
-				pathFileNew = cwd + "\\" + "python" +"\\" + file
+				pathFileNew = cwd + "\\" + "Programming" +"\\" + file
 				shutil.copy2(pathFile,pathFileNew)
 				os.remove(pathFile)
-	print("Python have been transferred successfully !!")
+	print("Programming files have been transferred successfully !!")
 
 def organizeImage():
 	for file in files:
@@ -64,9 +64,9 @@ def organizeProgram():
 			pathFileProgramNew = cwd + "\\" + "Program" + "\\" + file
 			shutil.copy2(pathFileProgram,pathFileProgramNew)
 			os.remove(pathFileProgram)
+	print("Programs have been transferred successfully !!")
 
-
-threadPython = th(target=organizePython)
+threadProgramming = th(target=organizeProgramming)
 threadImage = th(target=organizeImage)
 threadDocument = th(target=organizeDoc)
 threadViedo = th(target=organizeVideo)
@@ -75,6 +75,6 @@ threadViedo.start()
 threadProgram.start()
 threadDocument.start()
 threadImage.start()
-threadPython.start()
+threadProgramming.start()
 
 input()
